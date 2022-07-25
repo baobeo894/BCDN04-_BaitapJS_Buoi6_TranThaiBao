@@ -42,3 +42,103 @@ function chiahetcho3() {
    
 }
 document.getElementById("timsochia3").onclick = chiahetcho3;
+
+
+// bai 3
+
+function timsonguyenduong() {
+
+
+    var S = 0;
+    var t = 0;
+    
+   while(S < 10000){
+    t++;
+    S=S+t;  
+   }
+    
+    console.log(t);
+    
+    document.getElementById("songuyenduong").innerHTML = "Số nguyên dương nhỏ nhất:  "+ "\n" + Number(t);
+   
+}
+document.getElementById("tinh").onclick = timsonguyenduong;
+
+
+// bai 4
+
+function timtongluythua() {
+
+    var x = document.getElementById("nhapsox").value;
+    var n = document.getElementById("nhapson").value;
+    
+    var tong =0;
+    var bd = 1;
+    for(i = 1;i <= n;i++){
+        bd =bd*x;
+        tong += bd 
+    }
+ 
+    
+    document.getElementById("tong").innerHTML = "Tổng:  "+ "\n" + Number(tong);
+   
+}
+document.getElementById("tinhtong").onclick = timtongluythua;
+
+
+
+// bai 5
+function tinhgiaithua() {
+
+    
+    var giaithua = document.getElementById("nhapsoN").value;
+    var kq = 1;
+    for (var i = 1; i <= giaithua; i++) {
+      kq *= i;
+    }
+    console.log(kq);
+
+    
+    document.getElementById("giaithua").innerHTML = "Tổng:  "+ "\n" + Number(kq);
+}
+document.getElementById("tinhgiaithua").onclick = tinhgiaithua;
+
+
+
+//  bai 7
+function timsonguyento(so)
+{
+    var so = document.getElementById("").value;
+    // Biến cờ hiệu
+    var flag = true;
+
+    // Nếu n bé hơn 2 tức là không phải số nguyên tố
+    if (so < 2){
+        flag = false;
+    }
+    else if (so == 2){
+        flag = true;
+    }
+    else if (so % 2 == 0){
+      flag = false;
+    }
+    else{
+        // lặp từ 3 tới n-1 với bước nhảy là 2 (i+=2)
+        for (var i = 3; i < Math.sqrt(so); i+=2)
+        {
+            if (so % i == 0){
+                flag = false;
+                break;
+            }
+        }
+    }
+
+    // Kiểm tra biến flag
+    if (flag == true){
+        document.getElementById("songuyento").innerHTML = Number(so);
+    }
+    else{
+        document.getElementById("songuyento").innerHTML = "";
+    }
+}
+document.getElementById("insonguyento").onclick = timsonguyento;
